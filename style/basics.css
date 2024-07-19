@@ -1,0 +1,286 @@
+#map {
+			width: 50%;
+			height: 90%;
+			-webkit-print-color-adjust: exact;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			opacity: 1;
+			-webkit-print-color-adjust: exact;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: "black";
+			opacity: 1;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 1;
+		}
+		.hover {
+			
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			opacity: 1;
+		}
+		
+		.titular {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			opacity: 1;
+			width: 100%
+		}
+		.north {
+			padding: 6px 8px;
+			margin: 6px;
+			font: 14px/18px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			opacity: 1;
+			-webkit-print-color-adjust: exact;
+		}
+		.drop{
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+		}
+
+
+.newdrop
+{
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	visibility: hidden;
+}
+
+.charttable
+{
+  
+  font-family: sans-serif;
+  border-collapse: collapse;
+  font-size: 80%;
+  
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.chartth {
+  
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.charttd, .chartth {
+  text-align: center;
+  font-size: 12px;
+  border:0.25px solid #f0ab00;
+  box-shadow: 0 0 15px rgba(240,170,0,0.2);
+}
+.charttd1 {
+  text-align: center;
+  font-size: 13px;
+  border:0.25px solid #f0ab00;
+  box-shadow: 0 0 15px rgba(240,170,0,0.2);
+}
+.chartbr {
+  text-align: center;
+  
+  border:0.5px solid #f0ab00;
+  box-shadow: 0 0 2px rgba(240,170,0,0.7);
+}
+
+.normaltable {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  font-size: 70%;
+  border: 0.2px solid black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.normalth {
+   border: 1px solid black;
+   
+}
+
+.normaltd, .normalth {
+  padding: 2px;
+  text-align: center;
+  border: 1px solid black;
+  
+}
+
+.ul
+{
+    list-style-type: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.dropdown-menu
+{
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+.dropdown-menu>li
+{    position:relative;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+	cursor:pointer;
+
+    
+}
+.dropdown-menu .sub-menu {
+    left: 100%;
+    
+    border: 0.2px solid black;
+    top: 0;
+    display:none;
+    margin-top: -1px;
+	
+	
+	
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.right-caret:after
+ {	content:"";
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid orange;
+    display: inline-block;
+    height: 0;
+    opacity: 0.8;
+    vertical-align: middle;
+    width: 0;
+	margin-left:5px;
+}
+.left-caret:after
+{	content:"";
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-right: 4px solid orange;
+    display: inline-block;
+    height: 0;
+    opacity: 0.8;
+    vertical-align: middle;
+    width: 0;
+	margin-left:5px;
+}
+
+#nav {
+  position: fixed;
+  bottom: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  left: 0;
+  
+  background: #fff;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4);
+  border-bottom: 5px solid #f0ab00;
+}
+#nav a {
+  background: #fff;
+  display: block;
+  float: left;
+  width: 18%;
+  height: 60px;
+  line-height: 4;
+  border-left: 2px solid #fff;
+  opacity: 0.3;
+  font-weight: bold;
+  text-align: center;
+  color: #131313;
+  text-shadow: 1px 1px 1px #fff;
+}
+#nav a.active {
+   outline: none;
+   opacity: 1;
+   text-decoration: none;
+}
+#nav a:hover {
+  opacity: 0.7;
+  outline: none;
+  text-decoration: none;
+}
+#nav #bdalevel {
+  background: url("images/BDA_Bound.png") no-repeat center center;
+  height: 60px;
+  background-size: 80px 60px;
+}
+#nav #bbmplevel {
+  background: url("images/BBMP_Bound.png") no-repeat center center;
+  height: 60px;
+  background-size: 80px 60px;
+}
+#nav #zonelevel {
+  background: url("images/BBMP_Zones_Bound.png") no-repeat center center;
+  height: 60px;
+  background-size: 80px 60px;
+}
+#nav #wardlevel {
+  background: url("images/BBMPWards.png") no-repeat center center;
+  height: 60px;
+  background-size: 80px 60px;
+}
+#nav #logo {
+  background: #fff url("images/logo.png") no-repeat center center;
+  height: 60px;
+  background-size: contain;
+  text-indent: -9999px;
+  outline: none;
+  opacity: 1;
+}
+.my-label {
+    position: absolute;
+    width:100%;
+    font-size: small;
+	text-align: left;
+}
+.chartside
+{
+	width: 25%; 
+	height: 75%;
+	right: 0;
+	z-index: 8; 
+	position: absolute;
+	box-shadow: 0 0 15px rgba(240,170,0,0.2);
+	border-radius: 5px;
+	padding-right: 15px;
+	opacity: 0.8;
+	background-color: white;
+	margin-right: 1%;
+	margin-top: 1%;
+}
+.leaflet-map-pane {
+    z-index: 2 !important;
+}
+
+.leaflet-google-layer {
+    z-index: 1 !important;
+}

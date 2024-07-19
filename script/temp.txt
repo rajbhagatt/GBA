@@ -1,0 +1,489 @@
+		else if (choice=="grfarall")
+		{
+		
+		rescount0=0;
+		resarea0=0;
+		comcount0=0;
+		comarea0=0;
+		pscount0=0;
+		psarea0=0;
+		tcount0=0;
+		tarea0=0;
+		mixcount0=0;
+		mixarea0=0;
+		othcount0=0;
+		otharea0=0;
+		
+		rescount1=0;
+		resarea1=0;
+		comcount1=0;
+		comarea1=0;
+		pscount1=0;
+		psarea1=0;
+		tcount1=0;
+		tarea1=0;
+		mixcount1=0;
+		mixarea1=0;
+		othcount1=0;
+		otharea1=0;
+		
+		
+		rescount2=0;
+		resarea2=0;
+		comcount2=0;
+		comarea2=0;
+		pscount2=0;
+		psarea2=0;
+		tcount2=0;
+		tarea2=0;
+		mixcount2=0;
+		mixarea2=0;
+		othcount2=0;
+		otharea2=0;
+		
+		rescount3=0;
+		resarea3=0;
+		comcount3=0;
+		comarea3=0;
+		pscount3=0;
+		psarea3=0;
+		tcount3=0;
+		tarea3=0;
+		mixcount3=0;
+		mixarea3=0;
+		othcount3=0;
+		otharea3=0;
+		
+		rescount4=0;
+		resarea4=0;
+		comcount4=0;
+		comarea4=0;
+		pscount4=0;
+		psarea4=0;
+		tcount4=0;
+		tarea4=0;
+		mixcount4=0;
+		mixarea4=0;
+		othcount4=0;
+		otharea4=0;
+		
+		rescountab4=0;
+		resareaab4=0;
+		comcountab4=0;
+		comareaab4=0;
+		pscountab4=0;
+		psareaab4=0;
+		tcountab4=0;
+		tareaab4=0;
+		mixcountab4=0;
+		mixareaab4=0;
+		othcountab4=0;
+		othareaab4=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					(insidegrfar==0)? rescount0+=1 : (insidegrfar<=1) ? rescount1+=1 : insidegrfar<=2 ? rescount2+=1 : insidegrfar<=3? rescount3+=1 : insidegrfar=4? rescount4+=1 : rescountab4+=1 ;
+					(insidegrfar==0)? resarea0+=insideplarea : (insidegrfar<=1) ? resarea1+=insideplarea : insidegrfar<=2 ? resarea2+=insideplarea : insidegrfar<=3? resarea3+=insideplarea : insidegrfar=4? resarea4+=insideplarea : resareaab4+=insideplarea ;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					(insidegrfar==0)? pscount0+=1 : (insidegrfar<=1) ? pscount1+=1 : insidegrfar<=2 ? pscount2+=1 : insidegrfar<=3? pscount3+=1 : insidegrfar=4? pscount4+=1 : pscountab4+=1 ;
+					(insidegrfar==0)? psarea0+=insideplarea : (insidegrfar<=1) ? psarea1+=insideplarea : insidegrfar<=2 ? psarea2+=insideplarea : insidegrfar<=3? psarea3+=insideplarea : insidegrfar=4? psarea4+=insideplarea : psareaab4+=insideplarea ;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					(insidegrfar==0)? othcount0+=1 : (insidegrfar<=1) ? othcount1+=1 : insidegrfar<=2 ? othcount2+=1 : insidegrfar<=3? othcount3+=1 : insidegrfar=4? othcount4+=1 : othcountab4+=1 ;
+					(insidegrfar==0)? otharea0+=insideplarea : (insidegrfar<=1) ? otharea1+=insideplarea : insidegrfar<=2 ? otharea2+=insideplarea : insidegrfar<=3? otharea3+=insideplarea : insidegrfar=4? otharea4+=insideplarea : othareaab4+=insideplarea ;
+				}
+				else if (insideuse=="T")
+				{
+					(insidegrfar==0)? tcount0+=1 : (insidegrfar<=1) ? tcount1+=1 : insidegrfar<=2 ? tcount2+=1 : insidegrfar<=3? tcount3+=1 : insidegrfar=4? tcount4+=1 : tcountab4+=1 ;
+					(insidegrfar==0)? tarea0+=insideplarea : (insidegrfar<=1) ? tarea1+=insideplarea : insidegrfar<=2 ? tarea2+=insideplarea : insidegrfar<=3? tarea3+=insideplarea : insidegrfar=4? tarea4+=insideplarea : tareaab4+=insideplarea ;
+				}
+				else if (insideuse=="C")
+				{
+					(insidegrfar==0)? comcount0+=1 : (insidegrfar<=1) ? comcount1+=1 : insidegrfar<=2 ? comcount2+=1 : insidegrfar<=3? comcount3+=1 : insidegrfar=4? comcount4+=1 : comcountab4+=1 ;
+					(insidegrfar==0)? comarea0+=insideplarea : (insidegrfar<=1) ? comarea1+=insideplarea : insidegrfar<=2 ? comarea2+=insideplarea : insidegrfar<=3? comarea3+=insideplarea : insidegrfar=4? comarea4+=insideplarea : comareaab4+=insideplarea ;
+				}
+				else
+				{
+					(insidegrfar==0)? mixcount0+=1 : (insidegrfar<=1) ? mixcount1+=1 : insidegrfar<=2 ? mixcount2+=1 : insidegrfar<=3? mixcount3+=1 : insidegrfar=4? mixcount4+=1 : mixcountab4+=1 ;
+					(insidegrfar==0)? mixarea0+=insideplarea : (insidegrfar<=1) ? mixarea1+=insideplarea : insidegrfar<=2 ? mixarea2+=insideplarea : insidegrfar<=3? mixarea3+=insideplarea : insidegrfar=4? mixarea4+=insideplarea : mixareaab4+=insideplarea ;
+				}
+				
+				
+	        
+			}
+		}
+		
+		else if (choice=="grfar0")
+		{
+		
+		rescount0=0;
+		resarea0=0;
+		comcount0=0;
+		comarea0=0;
+		pscount0=0;
+		psarea0=0;
+		tcount0=0;
+		tarea0=0;
+		othcount0=0;
+		otharea0=0;
+		
+		
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R" ))
+				{
+					(insidegrfar==0)? rescount0+=1;
+					(insidegrfar==0)? resarea0+=insideplarea;
+				}
+				else if ((insideuse=="PS"))
+				{
+					(insidegrfar==0)? pscount0+=1;
+					(insidegrfar==0)? psarea0+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					(insidegrfar==0)? othcount0+=1;
+					(insidegrfar==0)? otharea0+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					(insidegrfar==0)? tcount0+=1;
+					(insidegrfar==0)? tarea0+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					(insidegrfar==0)? comcount0+=1;
+					(insidegrfar==0)? comarea0+=insideplarea;
+				}
+				
+	        
+			}
+		}
+		else if (choice=="grfar1")
+		{
+		rescount1=0;
+		resarea1=0;
+		comcount1=0;
+		comarea1=0;
+		pscount1=0;
+		psarea1=0;
+		tcount1=0;
+		tarea1=0;
+		mixcount1=0;
+		mixarea1=0;
+		othcount1=0;
+		otharea1=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					((insidegrfar>0)&&(insidegrfar<=1)) ? rescount1+=1;
+					((insidegrfar>0)&&(insidegrfar<=1)) ? resarea1+=insideplarea;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					((insidegrfar>0)&&(insidegrfar<=1)) ? pscount1+=1;
+					((insidegrfar>0)&&(insidegrfar<=1)) ? psarea1+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					((insidegrfar>0)&&(insidegrfar<=1)) ? othcount1+=1 ;
+					((insidegrfar>0)&&(insidegrfar<=1)) ? otharea1+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					((insidegrfar>0)&&(insidegrfar<=1)) ? tcount1+=1;
+					((insidegrfar>0)&&(insidegrfar<=1)) ? tarea1+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					((insidegrfar>0)&&(insidegrfar<=1)) ? comcount1+=1;
+					((insidegrfar>0)&&(insidegrfar<=1)) ? comarea1+=insideplarea;
+				}
+				else
+				{
+					((insidegrfar>0)&&(insidegrfar<=1)) ? mixcount1+=1;
+					((insidegrfar>0)&&(insidegrfar<=1)) ? mixarea1+=insideplarea;
+				}
+				
+				
+	        
+			}
+		}
+		
+		else if (choice=="grfar2")
+		{
+		rescount2=0;
+		resarea2=0;
+		comcount2=0;
+		comarea2=0;
+		pscount2=0;
+		psarea2=0;
+		tcount2=0;
+		tarea2=0;
+		mixcount2=0;
+		mixarea2=0;
+		othcount2=0;
+		otharea2=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					((insidegrfar>1)&&(insidegrfar<=2)) ? rescount2+=1;
+					((insidegrfar>1)&&(insidegrfar<=2)) ? resarea2+=insideplarea;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					((insidegrfar>1)&&(insidegrfar<=2)) ? pscount2+=1;
+					((insidegrfar>1)&&(insidegrfar<=2)) ? psarea2+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					((insidegrfar>1)&&(insidegrfar<=2)) ? othcount2+=1 ;
+					((insidegrfar>1)&&(insidegrfar<=2)) ? otharea2+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					((insidegrfar>1)&&(insidegrfar<=2)) ? tcount2+=1;
+					((insidegrfar>1)&&(insidegrfar<=2)) ? tarea2+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					((insidegrfar>1)&&(insidegrfar<=2)) ? comcount2+=1;
+					((insidegrfar>1)&&(insidegrfar<=2)) ? comarea2+=insideplarea;
+				}
+				else
+				{
+					((insidegrfar>1)&&(insidegrfar<=2)) ? mixcount2+=1;
+					((insidegrfar>1)&&(insidegrfar<=2)) ? mixarea2+=insideplarea;
+				}
+				
+				
+	        
+			}
+		}
+		else if (choice=="grfar3")
+		{
+		rescount3=0;
+		resarea3=0;
+		comcount3=0;
+		comarea3=0;
+		pscount3=0;
+		psarea3=0;
+		tcount3=0;
+		tarea3=0;
+		mixcount3=0;
+		mixarea3=0;
+		othcount3=0;
+		otharea3=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					((insidegrfar>2)&&(insidegrfar<=3)) ? rescount3+=1;
+					((insidegrfar>2)&&(insidegrfar<=3)) ? resarea3+=insideplarea;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					((insidegrfar>2)&&(insidegrfar<=3)) ? pscount3+=1;
+					((insidegrfar>2)&&(insidegrfar<=3)) ? psarea3+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					((insidegrfar>2)&&(insidegrfar<=3)) ? othcount3+=1 ;
+					((insidegrfar>2)&&(insidegrfar<=3)) ? otharea3+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					((insidegrfar>2)&&(insidegrfar<=3)) ? tcount3+=1;
+					((insidegrfar>2)&&(insidegrfar<=3)) ? tarea3+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					((insidegrfar>2)&&(insidegrfar<=3)) ? comcount3+=1;
+					((insidegrfar>2)&&(insidegrfar<=3)) ? comarea3+=insideplarea;
+				}
+				else
+				{
+					((insidegrfar>2)&&(insidegrfar<=3)) ? mixcount3+=1;
+					((insidegrfar>2)&&(insidegrfar<=3)) ? mixarea3+=insideplarea;
+				}
+				
+				
+	        
+			}
+		}
+		else if (choice=="grfar4")
+		{
+		rescount4=0;
+		resarea4=0;
+		comcount4=0;
+		comarea4=0;
+		pscount4=0;
+		psarea4=0;
+		tcount4=0;
+		tarea4=0;
+		mixcount4=0;
+		mixarea4=0;
+		othcount4=0;
+		otharea4=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					((insidegrfar>3)&&(insidegrfar<=4)) ? rescount4+=1;
+					((insidegrfar>3)&&(insidegrfar<=4)) ? resarea4+=insideplarea;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					((insidegrfar>3)&&(insidegrfar<=4)) ? pscount4+=1;
+					((insidegrfar>3)&&(insidegrfar<=4)) ? psarea4+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					((insidegrfar>3)&&(insidegrfar<=4)) ? othcount4+=1 ;
+					((insidegrfar>3)&&(insidegrfar<=4)) ? otharea4+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					((insidegrfar>3)&&(insidegrfar<=4)) ? tcount4+=1;
+					((insidegrfar>3)&&(insidegrfar<=4)) ? tarea4+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					((insidegrfar>3)&&(insidegrfar<=4)) ? comcount4+=1;
+					((insidegrfar>3)&&(insidegrfar<=4)) ? comarea4+=insideplarea;
+				}
+				else
+				{
+					((insidegrfar>3)&&(insidegrfar<=4)) ? mixcount4+=1;
+					((insidegrfar>3)&&(insidegrfar<=4)) ? mixarea4+=insideplarea;
+				}
+				
+				
+	        
+			}
+		}
+		else if (choice=="grfarab4")
+		{
+		rescountab4=0;
+		resareaab4=0;
+		comcountab4=0;
+		comareaab4=0;
+		pscountab4=0;
+		psareaab4=0;
+		tcountab4=0;
+		tareaab4=0;
+		mixcountab4=0;
+		mixareaab4=0;
+		othcountab4=0;
+		othareaab4=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					((insidegrfar>4)) ? rescountab4+=1;
+					((insidegrfar>4)) ? resareaab4+=insideplarea;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					((insidegrfar>4)) ? pscountab4+=1;
+					((insidegrfar>4)) ? psareaab4+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					((insidegrfar>4)) ? othcountab4+=1 ;
+					((insidegrfar>4)) ? othareaab4+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					((insidegrfar>4)) ? tcountab4+=1;
+					((insidegrfar>4)) ? tareaab4+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					((insidegrfar>4)) ? comcountab4+=1;
+					((insidegrfar>4)) ? comareaab4+=insideplarea;
+				}
+				else
+				{
+					((insidegrfar>4)) ? mixcountab4+=1;
+					((insidegrfar>4)) ? mixareaab4+=insideplarea;
+				}
+				
+				
+	        
+			}
+		}

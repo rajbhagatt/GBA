@@ -1,0 +1,61 @@
+else if (choice=="grfarab4")
+		{
+		rescountab4=0;
+		resareaab4=0;
+		comcountab4=0;
+		comareaab4=0;
+		pscountab4=0;
+		psareaab4=0;
+		tcountab4=0;
+		tareaab4=0;
+		mixcountab4=0;
+		mixareaab4=0;
+		othcountab4=0;
+		othareaab4=0;
+		
+				
+		indexi=0;
+		while (indexi<sourc["features"].length)
+		{
+			insideuse=sourc["features"][indexi]["properties"]["Use"];
+
+			insidewidth=sourc["features"][indexi]["properties"]["AssRoadWid"];
+			insidegrfar=sourc["features"][indexi]["properties"]["ConFAR"];
+		
+			if ((insidewidth<whval)& (insidewidth>=wlval))
+			{
+				if ((insideuse=="R"))
+				{
+					((insidegrfar>4)) ? rescountab4+=1;
+					((insidegrfar>4)) ? resareaab4+=insideplarea;
+				}
+				else if ((insideuse=="PS" ))
+				{
+					((insidegrfar>4)) ? pscountab4+=1;
+					((insidegrfar>4)) ? psareaab4+=insideplarea;
+				}
+				else if ((insideuse=="PR" || insideuse=="PG"))
+				{
+					((insidegrfar>4)) ? othcountab4+=1 ;
+					((insidegrfar>4)) ? othareaab4+=insideplarea;
+				}
+				else if (insideuse=="T")
+				{
+					((insidegrfar>4)) ? tcountab4+=1;
+					((insidegrfar>4)) ? tareaab4+=insideplarea;
+				}
+				else if (insideuse=="C")
+				{
+					((insidegrfar>4)) ? comcountab4+=1;
+					((insidegrfar>4)) ? comareaab4+=insideplarea;
+				}
+				else
+				{
+					((insidegrfar>4)) ? mixcountab4+=1;
+					((insidegrfar>4)) ? mixareaab4+=insideplarea;
+				}
+				
+				
+	        
+			}
+		}

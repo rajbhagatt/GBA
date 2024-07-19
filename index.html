@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>
+BBMP Data View
+</title>
+
+
+	
+	<meta charset="utf-8" />
+	
+  	<link href='style/css.css' rel='stylesheet' type='text/css'>
+  	<link href="style/font-awesome.min.css" rel="stylesheet">
+ 	
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="style/leaflet.css" />
+	
+	<link rel="stylesheet" href="style/basics.css" />
+	
+
+	<script> L_PREFER_CANVAS = true;</script>
+	
+	
+	<script src="script/leaflet.js"></script>
+	<script src="script/leaflet.label.js"></script>
+	<script src="script/leaflet-pip.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3n7Dfe0nUZQ9I0dh2uD0S3vc9LIrbb2c"></script>
+	
+	
+	<script src="data/geo/BUD.js"></script>
+	<script src="data/geo/BDA.js"></script>
+	<script src="data/geo/GBA.js"></script>
+	<script src="data/geo/BBMP_Old.js"></script>
+	<script src="data/geo/BBMP_New.js"></script>
+	<script src="script/jquery.min.js"></script>
+	<script type="text/javascript" src="script/jsapi.js"></script>
+	
+	
+    <script>
+		MB_ATTR = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery � <a href="http://mapbox.com">Mapbox</a>';
+		MB_URL = 'http://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+		OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+			
+		
+	</script>
+
+</head>
+<body>
+
+<div id="formsect" style="width: 25%; float: left; line-height: 2%; z-index: 10; position: absolute; margin-left: 1%;margin-top: 1%; box-shadow: 0 0 15px rgba(240,170,0,0.7); border-radius: 5px; opacity: 0.8; background-color: white;" >
+
+<h2> View Data </h2>
+<br>
+<input type="checkbox" id="gbabox" name="gbabox" value="GBAYes" onchange="funcswitch()" checked>
+<label for="gbabox"> Greater Bengaluru Authority</label><br>
+<input type="checkbox" id="bbmpnewbox" name="bbmpnewbox" value="BBMPNewYes" onchange="funcswitch()" checked>
+<label for="bbmpnewbox"> Proposed BBMP </label><br>
+
+<input type="checkbox" id="bbmpoldbox" name="bbmpoldbox" value="BBMPOldYes" onchange="funcswitch()" >
+<label for="bbmpoldbox"> Existing BBMP </label><br>
+
+<input type="checkbox" id="bdabox" name="bdabox" value="BDAYes" onchange="funcswitch()" >
+<label for="bdabox"> Existing BDA </label><br>
+<input type="checkbox" id="budbox" name="budbox" value="BUDYes" onchange="funcswitch()" >
+<label for="budbox">  Bangalore Urban Dist </label><br>
+
+
+<br> <br>
+<br> <br>
+
+<p>Background Map<select id="bgbox" class='drop' style="float: right; width: 40%" onchange="bgswitch()">
+<option value="selectany">Choose the Background Map</option>
+'roadmap', 'satellite', 'terrain' and 'hybrid'
+<option value="roadmap">Google Road Map</option>
+<option value="satellite">Google Satellite Map</option>
+<option value="terrain">Google Terrain Map</option>
+<option value="hybrid">Google Hybrid Map</option>
+</select >
+<br>
+</p>
+
+</div>
+<div id="map" class="map" style="height: 100%; width: 100%; float:left; border:1px solid #f0ab00; z-index: 1">
+
+<script src="script/mapper.js"></script>
+
+</div>
+
+</body>
+</html>
