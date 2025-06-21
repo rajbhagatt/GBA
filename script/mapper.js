@@ -75,7 +75,7 @@
 	longstart=77.5;	
 	
 	var map = L.map('map').setView([latstart, longstart], zoom);
-	
+	map.setOptions({ zoomControl: false });
         var zoomControl = L.control.zoom({ position: 'bottomleft' }).addTo(map);
         
 	var GBA_M=L.geoJson(gba, {style: style_GBA});
