@@ -45,7 +45,7 @@
 	    fillColor: 'white',
 		weight: 3,
         opacity: 1,
-        color: 'grey',
+        color: 'black',
         dashArray: '3',
         fillOpacity: 0
 		};
