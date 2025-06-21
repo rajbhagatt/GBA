@@ -76,6 +76,8 @@
 	
 	var map = L.map('map').setView([latstart, longstart], zoom);
 	
+        var zoomControl = L.control.zoom({ position: 'bottomleft' }).addTo(map);
+        
 	var GBA_M=L.geoJson(gba, {style: style_GBA});
 	var BBMP_NEW_M=L.geoJson(bbmpnew, {style: style_BBMPNEW});
 	var BDA_M=L.geoJson(bda, {style: style_BDA});
