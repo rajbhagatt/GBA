@@ -26,11 +26,21 @@ BBMP Data View
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3n7Dfe0nUZQ9I0dh2uD0S3vc9LIrbb2c"></script>
 	
 	
-	<script src="data/geo/BUD.js"></script>
-	<script src="data/geo/BDA.js"></script>
-	<script src="data/geo/GBA.js"></script>
+
 	<script src="data/geo/BBMP_Old.js"></script>
-	<script src="data/geo/BBMP_New.js"></script>
+	<script src="data/geo/BBMP_MP_Constituency.js"></script>
+	<script src="data/geo/BBMP_Assembly_Constituency.js"></script>
+	<script src="data/geo/BBMP_WardsFile.js"></script>
+	<script src="data/geo/GBA.js"></script>
+	<script src="data/geo/BBMP_Opt2.js"></script>
+	<script src="data/geo/BBMP_5_2_2.js"></script>
+
+
+
+
+
+
+
 	<script src="script/jquery.min.js"></script>
 	<script type="text/javascript" src="script/jsapi.js"></script>
 	
@@ -38,7 +48,7 @@ BBMP Data View
     <script>
 		MB_ATTR = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery � <a href="http://mapbox.com">Mapbox</a>';
+				'Imagery   <a href="http://mapbox.com">Mapbox</a>';
 		MB_URL = 'http://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
 		OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 		OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -53,22 +63,32 @@ BBMP Data View
 
 <h2> View Data </h2>
 <br>
-<input type="checkbox" id="gbabox" name="gbabox" value="GBAYes" onchange="funcswitch()" checked>
-<label for="gbabox"> Greater Bengaluru Authority</label><br>
-<input type="checkbox" id="bbmpnewbox" name="bbmpnewbox" value="BBMPNewYes" onchange="funcswitch()" checked>
-<label for="bbmpnewbox"> Proposed BBMP </label><br>
+<p>Scenario Map<select id="scbox" class='drop' style="float: right; width: 40%" onchange="scswitch()">
+<option value="selectany">Choose the Scenario</option>
+'500'and '522'
+<option value="522">Option 1</option>
+<option value="500">Option 2</option>
 
-<input type="checkbox" id="bbmpoldbox" name="bbmpoldbox" value="BBMPOldYes" onchange="funcswitch()" >
-<label for="bbmpoldbox"> Existing BBMP </label><br>
+</select >
+</p>
+<br> <br>
+<br> <br>
 
-<input type="checkbox" id="bdabox" name="bdabox" value="BDAYes" onchange="funcswitch()" >
-<label for="bdabox"> Existing BDA </label><br>
-<input type="checkbox" id="budbox" name="budbox" value="BUDYes" onchange="funcswitch()" >
-<label for="budbox">  Bangalore Urban Dist </label><br>
+
+<input type="checkbox" id="wardbox" name="Wardbox" value="WardYes" onchange="funcswitch()">
+<label for="Wardbox"> BBMP Wards </label><br>
+
+
+<input type="checkbox" id="assbox" name="assbox" value="AssYes" onchange="funcswitch()">
+<label for="assbox"> Assembly Constituency </label><br>
+
+<input type="checkbox" id="gbabox" name="gbabox" value="gbaYes" onchange="funcswitch()">
+<label for="gbabox"> GBA </label><br>
 
 
 <br> <br>
 <br> <br>
+
 
 <p>Background Map<select id="bgbox" class='drop' style="float: right; width: 40%" onchange="bgswitch()">
 <option value="selectany">Choose the Background Map</option>
